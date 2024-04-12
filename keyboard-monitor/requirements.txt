@@ -1,4 +1,4 @@
-mysqlclient==2.2.4
+pymssql==2.2.7
 SQLAlchemy==2.0.28
 pynput==1.7.6
 python-dotenv==1.0.1
