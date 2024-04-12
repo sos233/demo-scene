@@ -97,3 +97,14 @@ It'll open a window in your browser and shows the data frames:
 ![Streamlit Display](media/streamlit-display.png)
 
 If the window is not opened, you can explicit view it via http://localhost:8501.
+
+## 部署Streamlit报错
+
+### The main module file does not exist #community-cloud
+
+注意 The main script 应该是 keyboard-monitor/display.py， 默认是 keyboard-monitor\display.py
+
+### Problem installing mysqlclient - Can not find valid pkg-config name
+需要在根目录下添加packages.txt，文件内容如下：
+pkg-config
+default-libmysqlclient-dev
