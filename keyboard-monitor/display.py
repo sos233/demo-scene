@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import pytz
 import streamlit as st
 import tzlocal
-
+import pandas as pd
 
 st.title("Keyboard Monitor")
 
@@ -77,5 +77,6 @@ ORDER BY ts ASC
 LIMIT 10;
 """
 df = conn.query(query)
+df['ts'] = pd.to_datetime(df['ts'], format='%Y-%m-%d %H:%M:%S')
 df['ts'] = df['ts'].dt.tz_localize(pytz.utc).dt.tz_convert(local_tz)
 st.dataframe(df)
